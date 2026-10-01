@@ -1,11 +1,11 @@
-# AWS Certified AI Practitioner (AIF-C01) — Strict Practice Exam Suite
+# AWS Certified AI Practitioner (AIF-C01) — Practice Exam Suite
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Online-brightgreen?logo=github)](https://minanagehsalalma.github.io/aws-aif-c01-strict-exams/)
-[![Questions](https://img.shields.io/badge/Questions-446%20Unique%20Items-blue?logo=amazon-aws)](https://minanagehsalalma.github.io/aws-aif-c01-strict-exams/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Online-brightgreen?logo=github)](https://minanagehsalalma.github.io/aws-aif-c01-practice-exams/)
+[![Questions](https://img.shields.io/badge/Questions-446%20Unique%20Items-blue?logo=amazon-aws)](https://minanagehsalalma.github.io/aws-aif-c01-practice-exams/)
 [![Exams](https://img.shields.io/badge/Exam%20Forms-7%20Interactive%20Exams-orange)](#-exam-forms--direct-links)
 [![Offline Ready](https://img.shields.io/badge/Client--Side-100%25%20Offline%20Ready-success)](#-running-locally--offline)
 
-A complete, self-contained, interactive practice exam suite for the **AWS Certified AI Practitioner (AIF-C01)** certification. Built from strictly community-verified and deduplicated ExamTopics source questions, featuring full keyboard-first controls, an iterative mistake-mastery redo loop, fullscreen focus mode, and scaled scoring.
+A complete, self-contained, interactive practice exam suite for the **AWS Certified AI Practitioner (AIF-C01)** certification. Built from community-verified and deduplicated ExamTopics source questions, featuring full keyboard-first controls, an iterative mistake-mastery redo loop, fullscreen focus mode, and scaled scoring.
 
 ---
 
@@ -13,19 +13,19 @@ A complete, self-contained, interactive practice exam suite for the **AWS Certif
 
 You can launch and practice the entire exam suite directly in your browser:
 
-### 🚀 **[Open the Exams Portal](https://minanagehsalalma.github.io/aws-aif-c01-strict-exams/)**
+### 🚀 **[Open the Exams Portal](https://minanagehsalalma.github.io/aws-aif-c01-practice-exams/)**
 
 ### 📝 Exam Forms & Direct Links
 
 | Exam Form | Questions | ExamTopics Coverage | Direct Launch Link |
 | :--- | :---: | :---: | :--- |
-| **Exam Form A** | 65 | Q1 – Q65 | [Launch Form A →](https://minanagehsalalma.github.io/aws-aif-c01-strict-exams/AWS-AIF-C01-ExamTopics-Strict-Exam-1.html) |
-| **Exam Form B** | 65 | Q66 – Q130 | [Launch Form B →](https://minanagehsalalma.github.io/aws-aif-c01-strict-exams/AWS-AIF-C01-ExamTopics-Strict-Exam-2.html) |
-| **Exam Form C** | 65 | Q131 – Q196 | [Launch Form C →](https://minanagehsalalma.github.io/aws-aif-c01-strict-exams/AWS-AIF-C01-ExamTopics-Strict-Exam-3.html) |
-| **Exam Form D** | 65 | Q197 – Q262 | [Launch Form D →](https://minanagehsalalma.github.io/aws-aif-c01-strict-exams/AWS-AIF-C01-ExamTopics-Strict-Exam-4.html) |
-| **Exam Form E** | 65 | Q263 – Q328 | [Launch Form E →](https://minanagehsalalma.github.io/aws-aif-c01-strict-exams/AWS-AIF-C01-ExamTopics-Strict-Exam-5.html) |
-| **Exam Form F** | 65 | Q329 – Q393 | [Launch Form F →](https://minanagehsalalma.github.io/aws-aif-c01-strict-exams/AWS-AIF-C01-ExamTopics-Strict-Exam-6.html) |
-| **Exam Form G** | 56 | Q394 – Q452 | [Launch Form G →](https://minanagehsalalma.github.io/aws-aif-c01-strict-exams/AWS-AIF-C01-ExamTopics-Strict-Exam-7.html) |
+| **Exam Form A** | 65 | Q1 – Q65 | [Launch Form A →](https://minanagehsalalma.github.io/aws-aif-c01-practice-exams/AWS-AIF-C01-Exam-1.html) |
+| **Exam Form B** | 65 | Q66 – Q130 | [Launch Form B →](https://minanagehsalalma.github.io/aws-aif-c01-practice-exams/AWS-AIF-C01-Exam-2.html) |
+| **Exam Form C** | 65 | Q131 – Q196 | [Launch Form C →](https://minanagehsalalma.github.io/aws-aif-c01-practice-exams/AWS-AIF-C01-Exam-3.html) |
+| **Exam Form D** | 65 | Q197 – Q262 | [Launch Form D →](https://minanagehsalalma.github.io/aws-aif-c01-practice-exams/AWS-AIF-C01-Exam-4.html) |
+| **Exam Form E** | 65 | Q263 – Q328 | [Launch Form E →](https://minanagehsalalma.github.io/aws-aif-c01-practice-exams/AWS-AIF-C01-Exam-5.html) |
+| **Exam Form F** | 65 | Q329 – Q393 | [Launch Form F →](https://minanagehsalalma.github.io/aws-aif-c01-practice-exams/AWS-AIF-C01-Exam-6.html) |
+| **Exam Form G** | 56 | Q394 – Q452 | [Launch Form G →](https://minanagehsalalma.github.io/aws-aif-c01-practice-exams/AWS-AIF-C01-Exam-7.html) |
 
 ---
 
@@ -84,7 +84,7 @@ The questions are classified into the official 5 AWS Certified AI Practitioner d
 | **Domain 3** | Applications of Foundation Models | 58 | 13.0% |
 | **Domain 4** | Guidelines for Responsible AI | 41 | 9.2% |
 | **Domain 5** | Security, Compliance, and Governance for AI Solutions | 35 | 7.8% |
-| **Total** | **Strict Community-Verified Bank** | **446** | **100%** |
+| **Total** | **Community-Verified Question Bank** | **446** | **100%** |
 
 ---
 
@@ -102,13 +102,13 @@ This suite is 100% self-contained and requires no Node.js, Python, or web server
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/minanagehsalalma/aws-aif-c01-strict-exams.git
-   cd aws-aif-c01-strict-exams
+   git clone https://github.com/minanagehsalalma/aws-aif-c01-practice-exams.git
+   cd aws-aif-c01-practice-exams
    ```
 
 2. **Open the portal:**
-   - Double-click `index.html` or `AWS-AIF-C01-ExamTopics-Strict-Portal.html` in any web browser (Chrome, Edge, Firefox, Safari).
-   - Alternatively, open any of the individual `AWS-AIF-C01-ExamTopics-Strict-Exam-*.html` files directly.
+   - Double-click `index.html` or `AWS-AIF-C01-Portal.html` in any web browser (Chrome, Edge, Firefox, Safari).
+   - Alternatively, open any of the individual `AWS-AIF-C01-Exam-*.html` files directly.
 
 ---
 
