@@ -1,0 +1,13 @@
+# Large binaries and course archives
+*.pdf
+*.zip
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & workspace files
+.vscode/
+.idea/
+scratch/
