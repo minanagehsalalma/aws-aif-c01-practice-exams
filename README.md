@@ -107,7 +107,7 @@ This suite is 100% self-contained and requires no Node.js, Python, or web server
    ```
 
 2. **Open the portal:**
-   - Double-click `index.html` or `AWS-AIF-C01-Portal.html` in any web browser (Chrome, Edge, Firefox, Safari).
+   - Double-click `index.html` in any web browser (Chrome, Edge, Firefox, Safari).
    - Alternatively, open any of the individual `AWS-AIF-C01-Exam-*.html` files directly.
 
 ---

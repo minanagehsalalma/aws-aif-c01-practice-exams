@@ -1,6 +1,7 @@
 # Large binaries and course archives
 *.pdf
 *.zip
+study-materials/
 
 # Operating system files
 .DS_Store
