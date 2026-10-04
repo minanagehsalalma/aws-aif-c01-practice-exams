@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWS Certified AI Practitioner (AIF-C01) — Practice Exam Suite</title>
+<style>
+  :root {
+    --bg-main: #f2f3f3;
+    --text-main: #16191f;
+    --card-bg: #ffffff;
+    --border: #d5dbdb;
+    --header-bg: #232f3e;
+    --aws-orange: #ff9900;
+    --aws-orange-hover: #ec8b00;
+    --aws-blue: #0073bb;
+    --aws-blue-hover: #005a92;
+    --text-muted: #545b64;
+    --badge-bg: #fff3d6;
+    --badge-text: #7a4b00;
+    --badge-border: #ffd27a;
+    --table-header: #fafafa;
+    --table-border: #e5e8eb;
+    --code-bg: #f3f4f5;
+  }
+
+  body.dark-theme {
+    --bg-main: #0f172a;
+    --text-main: #f8fafc;
+    --card-bg: #1e293b;
+    --border: #334155;
+    --header-bg: #090d16;
+    --aws-orange: #ff9900;
+    --aws-orange-hover: #ffad33;
+    --aws-blue: #38bdf8;
+    --aws-blue-hover: #7dd3fc;
+    --text-muted: #94a3b8;
+    --badge-bg: #3b2c15;
+    --badge-text: #fde047;
+    --badge-border: #854d0e;
+    --table-header: #1e293b;
+    --table-border: #334155;
+    --code-bg: #334155;
+  }
+
+  * { box-sizing: border-box; transition: background-color 0.15s ease, border-color 0.15s ease; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.5;
+  }
+
+  header {
+    background: var(--header-bg);
+    color: white;
+    padding: 32px 20px;
+    border-bottom: 5px solid var(--aws-orange);
+    text-align: center;
+    position: relative;
+  }
+  header h1 { margin: 0 0 8px; font-size: 2.1rem; letter-spacing: -0.5px; }
+  header p { margin: 0; color: #c7d0d9; font-size: 1.05rem; }
+
+  .header-actions {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .theme-toggle-btn {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: white;
+    padding: 7px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .theme-toggle-btn:hover { background: rgba(255, 255, 255, 0.22); }
+
+  .repo-btn {
+    background: var(--aws-orange);
+    color: #16191f;
+    padding: 7px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .repo-btn:hover { background: var(--aws-orange-hover); }
+
+  main { max-width: 1200px; margin: 28px auto; padding: 0 20px; }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .stat, .card, .panel {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.04);
+  }
+  .stat strong { display: block; font-size: 2.1rem; color: var(--aws-orange); line-height: 1.1; margin-bottom: 4px; }
+  .stat span { color: var(--text-muted); font-size: 0.95rem; font-weight: 500; }
+
+  .features-strip {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 28px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .feature-item { display: flex; gap: 12px; align-items: flex-start; }
+  .feature-icon { font-size: 1.5rem; line-height: 1; }
+  .feature-item strong { display: block; font-size: 0.95rem; margin-bottom: 2px; }
+  .feature-item p { margin: 0; color: var(--text-muted); font-size: 0.85rem; line-height: 1.4; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card .badge {
+    display: inline-block;
+    align-self: flex-start;
+    background: var(--badge-bg);
+    color: var(--badge-text);
+    border: 1px solid var(--badge-border);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-weight: 700;
+    font-size: .82rem;
+  }
+  .card h2 { margin: 12px 0 6px; font-size: 1.4rem; color: var(--text-main); }
+  .card p { color: var(--text-muted); font-size: 0.92rem; margin: 4px 0 12px; }
+  .card ul { padding-left: 20px; margin: 0 0 18px; color: var(--text-muted); font-size: 0.88rem; }
+  .card li { margin-bottom: 4px; }
+  .card a {
+    display: block;
+    margin-top: auto;
+    background: var(--aws-blue);
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+  .card a:hover { background: var(--aws-blue-hover); }
+
+  .panel { margin-top: 28px; }
+  .panel h2 { margin-top: 0; font-size: 1.35rem; }
+  table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+  th, td { padding: 12px 14px; border-bottom: 1px solid var(--table-border); text-align: left; }
+  th { background: var(--table-header); color: var(--text-muted); font-weight: 600; }
+  code { background: var(--code-bg); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+  footer { text-align: center; color: var(--text-muted); padding: 36px 20px; font-size: 0.9rem; }
+
+  @media (max-width: 640px) {
+    .header-actions { position: static; justify-content: center; margin-top: 14px; }
+    header { padding: 24px 16px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-actions">
+    <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()">
+      <span id="themeIcon">🌙</span> <span id="themeText">Dark Mode</span>
+    </button>
+    <a href="https://github.com/minanagehsalalma/aws-aif-c01-practice-exams" target="_blank" class="repo-btn">
+      ⭐ GitHub
+    </a>
+  </div>
+  <h1>AWS Certified AI Practitioner (AIF-C01)</h1>
+  <p>Community-verified, deduplicated practice exam suite with interactive mastery mode & keyboard navigation.</p>
+</header>
+<main>
+  <section class="stats">
+    <div class="stat"><strong>446</strong><span>Unique Community-Voted Questions</span></div>
+    <div class="stat"><strong>7</strong><span>Interactive Timed Exams</span></div>
+    <div class="stat"><strong>65</strong><span>Questions in Forms A–F</span></div>
+    <div class="stat"><strong>56</strong><span>Questions in Final Form G</span></div>
+  </section>
+
+  <section class="features-strip">
+    <div class="feature-item">
+      <div class="feature-icon">🔁</div>
+      <div>
+        <strong>Smart Mastery Redo Mode</strong>
+        <p>Retries incorrect questions in an iterative mastery loop until 100% correct. Can be practiced anytime!</p>
+      </div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">⌨️</div>
+      <div>
+        <strong>Full Keyboard Support</strong>
+        <p>Arrows move choices, Enter/N for next, P for prev, 1-4/A-D direct choice, Space to toggle, F to flag, U for unanswered.</p>
+      </div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">⛶</div>
+      <div>
+        <strong>Fullscreen Focus Mode</strong>
+        <p>Press <code>Z</code> anytime for a distraction-free exam experience with high-contrast UI and question palette drawer.</p>
+      </div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">💾</div>
+      <div>
+        <strong>100% Client-Side & Offline</strong>
+        <p>All progress automatically saved in <code>localStorage</code>. Zero external servers or tracking required.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid">
+    <article class="card">
+      <div class="badge">Form A · 65 items</div>
+      <h2>Exam Form A</h2>
+      <p>Source questions 1–65 (with excluded/duplicate items skipped).</p>
+      <ul>
+        <li>Unique question stems</li>
+        <li>Community consensus answer key + explanations</li>
+        <li>90-minute timer, flagging, and scaled scoring</li>
+        <li>Smart Mastery Redo Mode enabled</li>
+      </ul>
+      <a href="AWS-AIF-C01-Exam-1.html">Launch Exam Form A →</a>
+    </article>
+
+    <article class="card">
+      <div class="badge">Form B · 65 items</div>
+      <h2>Exam Form B</h2>
+      <p>Source questions 66–130 (with excluded/duplicate items skipped).</p>
+      <ul>
+        <li>Unique question stems</li>
+        <li>Community consensus answer key + explanations</li>
+        <li>90-minute timer, flagging, and scaled scoring</li>
+        <li>Smart Mastery Redo Mode enabled</li>
+      </ul>
+      <a href="AWS-AIF-C01-Exam-2.html">Launch Exam Form B →</a>
+    </article>
+
+    <article class="card">
+      <div class="badge">Form C · 65 items</div>
+      <h2>Exam Form C</h2>
+      <p>Source questions 131–196 (with excluded/duplicate items skipped).</p>
+      <ul>
+        <li>Unique question stems</li>
+        <li>Community consensus answer key + explanations</li>
+        <li>90-minute timer, flagging, and scaled scoring</li>
+        <li>Smart Mastery Redo Mode enabled</li>
+      </ul>
+      <a href="AWS-AIF-C01-Exam-3.html">Launch Exam Form C →</a>
+    </article>
+
+    <article class="card">
+      <div class="badge">Form D · 65 items</div>
+      <h2>Exam Form D</h2>
+      <p>Source questions 197–262 (with excluded/duplicate items skipped).</p>
+      <ul>
+        <li>Unique question stems</li>
+        <li>Community consensus answer key + explanations</li>
+        <li>90-minute timer, flagging, and scaled scoring</li>
+        <li>Smart Mastery Redo Mode enabled</li>
+      </ul>
+      <a href="AWS-AIF-C01-Exam-4.html">Launch Exam Form D →</a>
+    </article>
+
+    <article class="card">
+      <div class="badge">Form E · 65 items</div>
+      <h2>Exam Form E</h2>
+      <p>Source questions 263–328 (with excluded/duplicate items skipped).</p>
+      <ul>
+        <li>Unique question stems</li>
+        <li>Community consensus answer key + explanations</li>
+        <li>90-minute timer, flagging, and scaled scoring</li>
+        <li>Smart Mastery Redo Mode enabled</li>
+      </ul>
+      <a href="AWS-AIF-C01-Exam-5.html">Launch Exam Form E →</a>
+    </article>
+
+    <article class="card">
+      <div class="badge">Form F · 65 items</div>
+      <h2>Exam Form F</h2>
+      <p>Source questions 329–393 (with excluded/duplicate items skipped).</p>
+      <ul>
+        <li>Unique question stems</li>
+        <li>Community consensus answer key + explanations</li>
+        <li>90-minute timer, flagging, and scaled scoring</li>
+        <li>Smart Mastery Redo Mode enabled</li>
+      </ul>
+      <a href="AWS-AIF-C01-Exam-6.html">Launch Exam Form F →</a>
+    </article>
+
+    <article class="card">
+      <div class="badge">Form G · 56 items</div>
+      <h2>Exam Form G</h2>
+      <p>Source questions 394–452 (with excluded/duplicate items skipped).</p>
+      <ul>
+        <li>Unique question stems</li>
+        <li>Community consensus answer key + explanations</li>
+        <li>90-minute timer, flagging, and scaled scoring</li>
+        <li>Smart Mastery Redo Mode enabled</li>
+      </ul>
+      <a href="AWS-AIF-C01-Exam-7.html">Launch Exam Form G →</a>
+    </article>
+  </section>
+
+  <section class="panel">
+    <h2>Domain Distribution</h2>
+    <table>
+      <thead><tr><th>Domain</th><th>Questions</th><th>Share</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Domain 1: Fundamentals of AI & ML</strong></td><td>146</td><td>32.7%</td></tr>
+        <tr><td><strong>Domain 2: Fundamentals of Generative AI</strong></td><td>166</td><td>37.2%</td></tr>
+        <tr><td><strong>Domain 3: Applications of Foundation Models</strong></td><td>58</td><td>13.0%</td></tr>
+        <tr><td><strong>Domain 4: Guidelines for Responsible AI</strong></td><td>41</td><td>9.2%</td></tr>
+        <tr><td><strong>Domain 5: Security, Compliance & Governance</strong></td><td>35</td><td>7.8%</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="panel">
+    <h2>Deduplication & Quality Assurance</h2>
+    <p>The raw source questions contained <strong>451</strong> records (source #284 was unassigned). Two duplicate stems were identified and resolved: Q138/Q261 (Q261 retained) and Q201/Q378 (Q378 retained). Three questions lacking recorded community vote consensus were excluded: Q404, Q415, and Q446.</p>
+    <p>This leaves <strong>446</strong> verified questions with 100% community-voted consensus answers, detailed community rationale, and domain mapping.</p>
+  </section>
+</main>
+<footer>
+  AWS Certified AI Practitioner (AIF-C01) Practice Suite · 100% Client-Side HTML/JS · Fully Offline Capable
+</footer>
+
+<script>
+  function initTheme() {
+    const saved = localStorage.getItem('aws_exam_theme');
+    const isDark = saved === 'dark';
+    if (isDark) {
+      document.body.classList.add('dark-theme');
+      updateThemeButton(true);
+    } else {
+      document.body.classList.remove('dark-theme');
+      updateThemeButton(false);
+    }
+  }
+
+  function toggleTheme() {
+    const isDark = document.body.classList.toggle('dark-theme');
+    localStorage.setItem('aws_exam_theme', isDark ? 'dark' : 'light');
+    updateThemeButton(isDark);
+  }
+
+  function updateThemeButton(isDark) {
+    const icon = document.getElementById('themeIcon');
+    const text = document.getElementById('themeText');
+    if (icon) icon.textContent = isDark ? '☀️' : '🌙';
+    if (text) text.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+  }
+
+  document.addEventListener('DOMContentLoaded', initTheme);
+</script>
+</body>
+</html>
